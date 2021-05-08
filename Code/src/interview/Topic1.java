@@ -12,11 +12,9 @@ import java.util.*;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class Topic1
-{
+public class Topic1 {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         /**
          * 一个List<Map<String, Object>>对象，按照其中Map的key值进行分组并根据value值进行降序排列
          * 要求：
@@ -26,12 +24,26 @@ public class Topic1
          * 已排序数据:{a=[{a=1111}, {a=111}, {a=11}, {a=1}], b=[{b=222}, {b=22}, {b=2}], c=[{c=3}, {c=1}]}
          */
 
-        List<Map<String, Object>> list = new ArrayList(){{
-            add(new HashMap(){{put("a", 1); put("c", 3);}});
-            add(new HashMap(){{put("a", 11); put("b", 2);}});
-            add(new HashMap(){{put("a", 111); put("c", 1);}});
-            add(new HashMap(){{put("b", 22);}});
-            add(new HashMap(){{put("a", 1111); put("b", 222);}});
+        List<Map<String, Object>> list = new ArrayList() {{
+            add(new HashMap() {{
+                put("a", 1);
+                put("c", 3);
+            }});
+            add(new HashMap() {{
+                put("a", 11);
+                put("b", 2);
+            }});
+            add(new HashMap() {{
+                put("a", 111);
+                put("c", 1);
+            }});
+            add(new HashMap() {{
+                put("b", 22);
+            }});
+            add(new HashMap() {{
+                put("a", 1111);
+                put("b", 222);
+            }});
         }};
 
         System.out.println("未分组排序数据:" + list);
@@ -41,7 +53,7 @@ public class Topic1
     public static Map<String, List<Map<String, Object>>> transition(List<Map<String, Object>> list) {
         Map<String, List<Map<String, Object>>> map = new HashMap<>();
         // 分组
-        for (Map<String ,Object> temp : list) {
+        for (Map<String, Object> temp : list) {
             // 获取map的每一对值
             Iterator<Map.Entry<String, Object>> iterator = temp.entrySet().iterator();
             while (iterator.hasNext()) {

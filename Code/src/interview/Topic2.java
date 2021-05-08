@@ -1,6 +1,8 @@
 package interview;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @File Name: interview
@@ -12,11 +14,9 @@ import java.util.*;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class Topic2
-{
+public class Topic2 {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         /**
          * 两数之和
          * 要求：

@@ -1,8 +1,7 @@
 package interview;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @File Name: interview
@@ -14,60 +13,49 @@ import java.util.Map;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class Topic3
-{
+public class Topic3 {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         /**
-         * 两数之和
+         * 无重复字符的最长子串
          * 要求：
-         * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
-         * 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
+         * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+         *
          * 期望结果：
-         * 给定 nums = [2, 7, 11, 15], target = 9
-         * 因为 nums[0] + nums[1] = 2 + 7 = 9
-         * 所以返回 [0, 1]
+         * 输入: s = "abcabcbb"
+         * 输出: 3
+         * 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+         * 输入: s = "bbbbb"
+         * 输出: 1
+         * 解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+         * 输入: s = ""
+         * 输出: 0
+         * 输入: s = "pwwkew"
+         * 输出: 3
+         * 解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+         *      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
          */
-        int[] nums = new int[]{2, 7, 11, 15};
-        System.out.println(Arrays.toString(twoSum(nums, 17)));
+        String target = "pwwkew";
+
+        System.out.println(lengthOfLongestSubstring(target));
     }
 
-    public static int[] twoSum(int[] nums, int target) {
-        int[] result = new int[2];
+    public static int lengthOfLongestSubstring(String target) {
+        int result = 0;
 
-        // 思路一 双重for循环
-        /*for (int i = 0; i < nums.length; i++) {
-            int first = nums[i];
-            for (int j = i + 1; j < nums.length; j++) {
-                if (first + nums[j] == target) {
-                    result[0] = i;
-                    result[1] = j;
-                }
+        int maxLen = 0;
+        int i = 0;
+        List<Character> temp = new ArrayList<>(target.length());
+        while (i < target.length()) {
+            char c = target.charAt(i);
+
+            if (!temp.contains(c)) {
+                maxLen += 1;
             }
-        }*/
 
-        // 思路二 使用map
-        Map<Integer, Integer> temp = new HashMap<>(nums.length);
-        for (int i = 0; i < nums.length; i++) {
-            if (temp.containsKey(nums[i])) {
-                result[0] = temp.get(nums[i]);
-                result[1] = i;
-                break;
-            }
-            temp.put(target - nums[i], i);
-        }
 
-        // 思路三 Bit
-        /*int volume = 2048;
-        int bitMode = volume - 1;
-        int[] t = new int[volume];
-        for (int i = 0; i < nums.length; i++) {
-            int c = (target - nums[i]) & bitMode;
-            if (t[c] != 0) return new int[]{t[c] - 1, i};
-            t[nums[i] & bitMode] = i + 1;
+            i++;
         }
-        return new int[]{-1, -1};*/
 
         return result;
     }
