@@ -10,43 +10,15 @@ package Concurrency;
  */
 public class Test {
 
-    private int num;
-    private static final Object LOCK = new Object();
+    private Object monitor = new Object();
+    private volatile int count;
 
     public static void main(String[] args) throws InterruptedException {
-//        Test test = new Test();
-//        new Thread(() -> test.printABC(0), "A").start();
-//        new Thread(() -> test.printABC(1), "B").start();
-//        new Thread(() -> test.printABC(2), "C").start();
         Test waitNotifyOddEven = new Test(0);
         new Thread(waitNotifyOddEven::printOddEven, "odd").start();
         Thread.sleep(10); //为了保证线程odd先拿到锁
         new Thread(waitNotifyOddEven::printOddEven, "even").start();
     }
-
-    /**
-     * 三个线程T1、T2、T3轮流打印ABC，打印n次，如ABCABCABCABC.......
-     */
-    private void printABC(int targetNum) {
-        for (int i = 0; i < 10; i++) {
-            synchronized (LOCK) {
-                while (num % 3 != targetNum) {
-                    System.out.print("-" + num + "-");
-                    try {
-                        LOCK.wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-                num++;
-                System.out.print(Thread.currentThread().getName());
-                LOCK.notifyAll();
-            }
-        }
-    }
-
-    private Object monitor = new Object();
-    private volatile int count;
 
     Test(int initCount) {
         this.count = initCount;
