@@ -1,7 +1,10 @@
 package DesignPatterns.AbstractFactory;
 
+import java.util.HashMap;
+
 /**
- * @File Name: DesignPatterns.AbstractFactory
+ * 具体工厂
+ *
  * @Author: WQL //作者及
  * @Date: 2019/8/18 11:39//完成日期
  * @Description: // 描述
@@ -10,27 +13,22 @@ package DesignPatterns.AbstractFactory;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class HerosFactory extends HeroAndSkillFactory
-{
-    @Override
-    public Heros getHeros(String heroType)
-    {
-        Heros heros = null;
+public class HerosFactory extends HeroAndSkillFactory {
 
-        switch (heroType) {
-            case "Ashe":
-                heros = new HeroAshe();
-                break;
-            case "MasterYi":
-                heros = new HeroMasterYi();
-                break;
-        }
-        return heros;
+    private HashMap<String, Heros> herosMap = new HashMap<>();
+
+    HerosFactory() {
+        herosMap.put("Ashe", new HeroAshe());
+        herosMap.put("MasterYi", new HeroMasterYi());
     }
 
     @Override
-    public Skills getSkills(String skillType)
-    {
+    public Heros getHeros(String heroType) {
+        return (Heros) herosMap.get(heroType).clone();
+    }
+
+    @Override
+    public Skills getSkills(String skillType) {
         return null;
     }
 }

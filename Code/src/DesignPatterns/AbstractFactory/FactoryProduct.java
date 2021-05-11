@@ -1,5 +1,7 @@
 package DesignPatterns.AbstractFactory;
 
+import java.util.function.Supplier;
+
 /**
  * @File Name: DesignPatterns.AbstractFactory
  * @Author: WQL //作者及
@@ -10,15 +12,19 @@ package DesignPatterns.AbstractFactory;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class FactoryProduct
-{
-    public static HeroAndSkillFactory getFactoryByType(String factoryType) {
-        if ("HerosFactory".equals(factoryType)) {
-            return new HerosFactory();
-        } else if ("SkillsFactory".equals(factoryType)) {
-            return new SkillsFactory();
-        } else {
-            return null;
-        }
+public enum FactoryProduct {
+
+    HerosFactory(HerosFactory::new),
+    SkillsFactory(SkillsFactory::new);
+
+    public Supplier<HeroAndSkillFactory> getConstructor() {
+        return constructor;
     }
+
+    FactoryProduct(Supplier<HeroAndSkillFactory> constructor) {
+        this.constructor = constructor;
+    }
+
+    private final Supplier<HeroAndSkillFactory> constructor;
+
 }
