@@ -1,7 +1,7 @@
-package Builder;
+package DesignPatterns.Builder;
 
 /**
- * @File Name: Builder
+ * @File Name: DesignPatterns.Builder
  * @Author: WQL //作者及
  * @Date: 2019/8/18 20:55//完成日期
  * @Description: // 具体建造者：实现了抽象建造者接口

@@ -1,7 +1,8 @@
-package AbstractFactory;
+package DesignPatterns.AbstractFactory;
 
 /**
- * @File Name: AbstractFactory
+ * @File Name: DesignPatterns.AbstractFactory
+ * 抽象工厂模式
  * @Author: WQL //作者及
  * @Date: 2019/8/18 11:49//完成日期
  * @Description: // 描述
@@ -10,10 +11,8 @@ package AbstractFactory;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class AbstractFactory
-{
-    public static void main(String[] args)
-    {
+public class AbstractFactory {
+    public static void main(String[] args) {
         HeroAndSkillFactory herosFactory = FactoryProduct.getFactoryByType("HerosFactory");
         Heros ashe = herosFactory.getHeros("Ashe");
         Heros masterYi = herosFactory.getHeros("MasterYi");
