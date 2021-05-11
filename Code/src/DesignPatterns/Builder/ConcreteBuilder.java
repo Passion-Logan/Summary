@@ -10,23 +10,22 @@ package DesignPatterns.Builder;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class ConcreteBuilder extends Builder
-{
+public class ConcreteBuilder extends Builder {
+    /**
+     * 具体建造者
+     */
     @Override
-    public void buildPartA()
-    {
+    public void buildPartA() {
         product.setPartA("建造 PartA");
     }
 
     @Override
-    public void buildPartB()
-    {
+    public void buildPartB() {
         product.setPartA("建造 PartB");
     }
 
     @Override
-    public void buildPartC()
-    {
+    public void buildPartC() {
         product.setPartA("建造 PartC");
     }
 }
@@ -39,18 +38,15 @@ class Product {
     private String partB;
     private String partC;
 
-    public void setPartA(String partA)
-    {
+    public void setPartA(String partA) {
         this.partA = partA;
     }
 
-    public void setPartB(String partB)
-    {
+    public void setPartB(String partB) {
         this.partB = partB;
     }
 
-    public void setPartC(String partC)
-    {
+    public void setPartC(String partC) {
         this.partC = partC;
     }
 
@@ -65,8 +61,11 @@ class Product {
 abstract class Builder {
     // 创建产品对象
     protected Product product = new Product();
+
     public abstract void buildPartA();
+
     public abstract void buildPartB();
+
     public abstract void buildPartC();
 
     // 返回产品对象
