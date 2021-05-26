@@ -1,5 +1,8 @@
 package DesignPatterns.Bridge;
 
+/**
+ * 实现化角色
+ */
 public interface Weapon {
 
     void wield();

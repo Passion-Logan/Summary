@@ -1,6 +1,8 @@
 package DesignPatterns.Bridge;
 
 /**
+ * 具体实现话角色
+ *
  * @author wql
  * @desc Sword
  * @date 2021/5/24
