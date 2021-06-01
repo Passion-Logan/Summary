@@ -40,21 +40,21 @@ public class Main {
             if (isOperator(s)) {
                 Expression rightExpression = (Expression) stack.pop();
                 Expression leftExpression = (Expression) stack.pop();
-                System.out.println(String.format("popped from stack left: %s right: %s",
+                System.out.println(String.format("从堆栈中弹出左侧: %s 右侧: %s",
                         leftExpression.interpret(), rightExpression.interpret()));
                 Expression operator = getOperatorInstance(s, leftExpression, rightExpression);
-                System.out.println(String.format("operator: %s", operator));
+                System.out.println(String.format("操作者: %s", operator));
                 int result = operator.interpret();
                 NumberExpression resultExpression = new NumberExpression(result);
                 stack.push(resultExpression);
-                System.out.println(String.format("push result to stack: %s", resultExpression.interpret()));
+                System.out.println(String.format("将结果压入堆栈: %s", resultExpression.interpret()));
             } else {
                 NumberExpression i = new NumberExpression(s);
                 stack.push(i);
-                System.out.println(String.format("push to stack: %s", i.interpret()));
+                System.out.println(String.format("推入堆栈: %s", i.interpret()));
             }
         }
-        System.out.println(String.format("result: %s", ((Expression) stack.pop()).interpret()));
+        System.out.println(String.format("结果: %s", ((Expression) stack.pop()).interpret()));
     }
 
     public static boolean isOperator(String s) {

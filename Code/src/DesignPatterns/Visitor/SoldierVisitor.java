@@ -12,7 +12,7 @@ public class SoldierVisitor implements UnitVisitor {
 
     @Override
     public void visitSoldier(Soldier soldier) {
-        System.out.println(String.format("Greetings %s", soldier));
+        System.out.println(String.format("问候 %s", soldier));
     }
 
     @Override

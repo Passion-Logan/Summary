@@ -22,6 +22,6 @@ public class Sergeant extends Unit {
 
     @Override
     public String toString() {
-        return "sergeant";
+        return "警官";
     }
 }

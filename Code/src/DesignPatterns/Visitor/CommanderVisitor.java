@@ -22,6 +22,6 @@ public class CommanderVisitor implements UnitVisitor {
 
     @Override
     public void visitCommander(Commander commander) {
-        System.out.println(String.format("Good to see you %s", commander));
+        System.out.println(String.format("很高兴见到你 %s", commander));
     }
 }

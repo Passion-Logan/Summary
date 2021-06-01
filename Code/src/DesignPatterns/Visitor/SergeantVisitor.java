@@ -17,7 +17,7 @@ public class SergeantVisitor implements UnitVisitor {
 
     @Override
     public void visitSergeant(Sergeant sergeant) {
-        System.out.println(String.format("Hello %s", sergeant));
+        System.out.println(String.format("你好 %s", sergeant));
     }
 
     @Override

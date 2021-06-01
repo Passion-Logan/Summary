@@ -68,7 +68,7 @@ public class Star {
 
     @Override
     public String toString() {
-        return String.format("%s age: %d years mass: %d tons", type.toString(), ageYears, massTons);
+        return String.format("%s 年龄: %d 年 重量: %d 吨", type.toString(), ageYears, massTons);
     }
 
     /**

@@ -9,11 +9,11 @@ package DesignPatterns.Memento;
  * @lastUpdateTime 2021/5/31
  */
 public enum StarType {
-    SUN("sun"),
-    RED_GIANT("red giant"),
-    WHITE_DWARF("white dwarf"),
-    SUPERNOVA("supernova"),
-    DEAD("dead star");
+    SUN("太阳"),
+    RED_GIANT("红巨星"),
+    WHITE_DWARF("白矮星"),
+    SUPERNOVA("超新星"),
+    DEAD("死星");
 
     private final String title;
 
