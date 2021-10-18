@@ -10,14 +10,12 @@ package structure.array;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class Array
-{
+public class Array {
     private int[] intArray;
     private int length;
     private int elems;
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Array array = new Array(3);
         array.add(6);
         array.add(3);
@@ -34,6 +32,7 @@ public class Array
 
     /**
      * 添加
+     *
      * @param value
      */
     public void add(int value) {
@@ -47,6 +46,7 @@ public class Array
 
     /**
      * 查找
+     *
      * @param searchKey
      * @return
      */
@@ -65,6 +65,7 @@ public class Array
 
     /**
      * 更新(修改)
+     *
      * @param oldValue
      * @param newValue
      * @return
@@ -80,6 +81,7 @@ public class Array
 
     /**
      * 删除
+     *
      * @param value
      * @return
      */

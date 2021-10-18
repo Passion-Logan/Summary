@@ -12,12 +12,10 @@ import java.util.Arrays;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class Fast
-{
+public class Fast {
 
-    public static void main(String[] args)
-    {
-        int[] arr = new int[]{3,1,6,5,2};
+    public static void main(String[] args) {
+        int[] arr = new int[]{3, 1, 6, 5, 2};
 
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(quickSort(arr)));
@@ -25,7 +23,7 @@ public class Fast
 
     public static int[] quickSort(int[] a) {
         if (a.length > 0) {
-            quickSortRecursion(a,0, a.length - 1);
+            quickSortRecursion(a, 0, a.length - 1);
         }
         return a;
     }

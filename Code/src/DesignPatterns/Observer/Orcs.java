@@ -8,7 +8,7 @@ package DesignPatterns.Observer;
  * @lastUpdateDesc
  * @lastUpdateTime 2021/5/31
  */
-public class Orcs implements  WeatherObserver {
+public class Orcs implements WeatherObserver {
 
     @Override
     public void update(WeatherType currentWeather) {

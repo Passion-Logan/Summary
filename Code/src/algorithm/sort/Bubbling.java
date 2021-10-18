@@ -12,11 +12,9 @@ import java.util.Arrays;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class Bubbling
-{
-    public static void main(String[] args)
-    {
-        int[] arr = new int[]{1,6,3,5,2};
+public class Bubbling {
+    public static void main(String[] args) {
+        int[] arr = new int[]{1, 6, 3, 5, 2};
 
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(bubbleSort(arr)));
@@ -30,7 +28,8 @@ public class Bubbling
 
     /**
      * 冒泡排序(大的值从前往后冒泡)
-     *  优点：稳定排序，适用于数组存储的数据和链表存储的数据
+     * 优点：稳定排序，适用于数组存储的数据和链表存储的数据
+     *
      * @param a
      * @return
      */
@@ -38,7 +37,7 @@ public class Bubbling
         for (int end = a.length - 1; end > 0; end--) {
             // 增加一个判断是否发生过交换的标记
             boolean flag = false;
-            for (int j  = 0; j < end; j++) {
+            for (int j = 0; j < end; j++) {
                 if (a[j] > a[j + 1]) {
                     swap(a, j, j + 1);
                     flag = true;
@@ -54,7 +53,8 @@ public class Bubbling
 
     /**
      * 冒泡排序(小的值从后往前下沉)
-     *  优点：稳定排序，适用于数组存储的数据和链表存储的数据
+     * 优点：稳定排序，适用于数组存储的数据和链表存储的数据
+     *
      * @param a
      * @return
      */
@@ -63,7 +63,7 @@ public class Bubbling
             boolean flag = false;
             for (int j = a.length - 1; j > start; j--) {
                 if (a[j] < a[j - 1]) {
-                    swap(a, j , j - 1);
+                    swap(a, j, j - 1);
                     flag = true;
                 }
             }

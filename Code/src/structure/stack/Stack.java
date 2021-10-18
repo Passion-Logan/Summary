@@ -12,8 +12,7 @@ import java.util.Arrays;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class Stack
-{
+public class Stack {
 
     /**
      * 基于数组实现的序列栈，连续存储的线性实现，需要初始化容量
@@ -27,7 +26,8 @@ public class Stack
 
     private int top;
 
-    public Stack() {}
+    public Stack() {
+    }
 
     public Stack(int maxSize) {
         if (maxSize > 0) {
@@ -41,6 +41,7 @@ public class Stack
 
     /**
      * 入栈
+     *
      * @param obj
      */
     public void objPush(Object obj) {
@@ -52,6 +53,7 @@ public class Stack
 
     /**
      * 出栈
+     *
      * @return
      */
     public Object objPop() {
@@ -63,6 +65,7 @@ public class Stack
 
     /**
      * 查看顶栈
+     *
      * @return
      */
     public Object peekTop() {
@@ -79,7 +82,7 @@ public class Stack
     public void grow() {
         // <<左移位运算符，1表示乘以2的1次方
         if (top == maxSize - 1) {
-            maxSize = maxSize<<1;
+            maxSize = maxSize << 1;
             objArray = Arrays.copyOf(objArray, maxSize);
         }
     }
@@ -115,17 +118,15 @@ public class Stack
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         StringBuilder sb = new StringBuilder("[ ");
         for (Node<Object> node = nodeTop; node != null; node = node.next) {
             sb.append(node.data.toString() + " ");
         }
-        return sb.toString()+"]";
+        return sb.toString() + "]";
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         /*Stack stack = new Stack(1);
         stack.objPush("123");
         stack.objPush("456");

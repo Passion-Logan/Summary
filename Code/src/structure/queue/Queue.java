@@ -10,13 +10,12 @@ package structure.queue;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class Queue
-{
+public class Queue {
 
     /**
      * 1. 单向队列(Queue):只能在一端插入数据，另一端删除数据
      * 2. 双向队列(Deque):每一端都可以进行插入、删除数据
-     *
+     * <p>
      * 与栈不同的是，队列中的数据并不总是从数组的0下标开始的
      * 选择的做法是移动队头和队尾的指针
      * 为了避免队列不满却不能插入新的数据，我们可以让队尾指针绕回到数组开始的位置，这也称为“循环队列”
@@ -43,11 +42,12 @@ public class Queue
 
     /**
      * 入队
+     *
      * @param obj
      */
     public void add(Object obj) {
         if (item == maxSize) {
-            throw new RuntimeException(obj+" add error, queue is full");
+            throw new RuntimeException(obj + " add error, queue is full");
         }
         // 循环队列，首尾结合，下标控制队首和队尾的位置
         if (bottom == maxSize - 1) {
@@ -59,6 +59,7 @@ public class Queue
 
     /**
      * 出队
+     *
      * @return
      */
     public Object out() {
@@ -104,6 +105,7 @@ public class Queue
 
     /**
      * 入队
+     *
      * @param obj
      */
     public void addNodeQueue(Object obj) {
@@ -123,6 +125,7 @@ public class Queue
 
     /**
      * 出队
+     *
      * @return
      */
     public Object removeNodeQueue() {
@@ -139,8 +142,7 @@ public class Queue
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         StringBuilder sb = new StringBuilder("{ ");
         for (NodeQueue nodeQueue = queueTop; nodeQueue != null; nodeQueue = nodeQueue.next) {
             sb.append(nodeQueue.data.toString() + " ");
@@ -148,8 +150,7 @@ public class Queue
         return sb.toString() + "}";
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Queue queue = new Queue();
         queue.addNodeQueue("123");
         queue.addNodeQueue("abc");

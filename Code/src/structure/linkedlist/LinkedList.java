@@ -10,8 +10,7 @@ package structure.linkedlist;
  * @Others: // 其它内容的说明
  * @History: // 历史修改记录
  */
-public class LinkedList
-{
+public class LinkedList {
 
     // 链表头
     private Node head;
@@ -29,7 +28,7 @@ public class LinkedList
         //linkedlist.deleteHead();
         //linkedlist.deleteTail();
         linkedlist.display();
-    }    
+    }
 
     /**
      * 双端链表
@@ -54,6 +53,7 @@ public class LinkedList
 
     /**
      * 向链表头添加数据
+     *
      * @param object
      */
     public void addHead(Object object) {
@@ -120,17 +120,17 @@ public class LinkedList
             Node node = head;
             int tempSize = size;
             if (tempSize == 1) {
-                System.out.println("["+node.data+"]");
+                System.out.println("[" + node.data + "]");
                 return;
             }
 
             while (tempSize > 0) {
                 if (node.equals(head)) {
-                    System.out.print("["+node.data+"->");
+                    System.out.print("[" + node.data + "->");
                 } else if (node.next == null) {
-                    System.out.print(node.data+"]");
+                    System.out.print(node.data + "]");
                 } else {
-                    System.out.print(node.data+"->");
+                    System.out.print(node.data + "->");
                 }
                 node = node.next;
                 tempSize--;
