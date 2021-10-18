@@ -1,4 +1,4 @@
-package Other;
+package algorithm.other;
 
 import java.util.SortedMap;
 import java.util.TreeMap;

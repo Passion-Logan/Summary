@@ -1,4 +1,4 @@
-package IdGenerate;
+package algorithm.id;
 
 /**
  * 雪花算法
