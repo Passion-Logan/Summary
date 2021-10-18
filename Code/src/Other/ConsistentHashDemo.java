@@ -1,4 +1,4 @@
-package com.cody.restful.controller;
+package Other;
 
 import java.util.SortedMap;
 import java.util.TreeMap;
