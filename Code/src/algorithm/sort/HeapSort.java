@@ -14,11 +14,11 @@ import java.util.Arrays;
  */
 public class HeapSort {
 
-    private static int[] array = {23, 11, 7, 29, 33, 59, 8, 20, 9, 3, 2, 6, 10, 44, 83, 28, 5, 1, 0, 36};
+    private static int[] array = {23, 11, 7, 29, 33, 59, 20, 3, 3, 2, 6, 10, 44, 83, 28, 5, 1, 0, 36};
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(array));
-        System.out.println(Arrays.toString(sort(array)));
+        sort();
     }
 
     /**
@@ -26,23 +26,20 @@ public class HeapSort {
      * 若叶子节点比父节点大，则交换位置
      * 根节点即为最大值，则将根节点与最后的的一个叶子节点交换位置
      * 重复1，2操作，每次都找最大值则放置最后即可排序完成
-     *
-     * @param arr arr
-     * @return int[]
      */
-    private static int[] sort(int[] arr) {
+    private static void sort() {
         // 先构建一次大堆二叉树，做一个基本的排序
         buildMaxHeap();
+        System.out.println("构建过后的:" + Arrays.toString(array));
 
         for (int i = array.length - 1; i > 0; i--) {
             // 将最大值与最后一个位置的数交换
             exchangeValue(0, i);
-
             // 重新构建大堆二叉树，从0开始往下检测是否需要重新构建大堆
             maxHeap(i, 0);
+            System.out.println("第" + (array.length - i) + "次排序:" + Arrays.toString(array));
         }
-
-        return array;
+        ;
     }
 
     /**
