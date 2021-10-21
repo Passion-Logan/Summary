@@ -27,7 +27,6 @@ public class RadixSort {
      * 如此循环直至个十百千等等所有位数遍历完为止
      */
     private static int[] sort(int[] arr) {
-
         // 定义二位数组用来存储每个基数以及基数下的数值
         int[][] temp;
 
