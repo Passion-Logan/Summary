@@ -30,16 +30,13 @@ public class HeapSort {
     private static void sort() {
         // 先构建一次大堆二叉树，做一个基本的排序
         buildMaxHeap();
-        System.out.println("构建过后的:" + Arrays.toString(array));
-
         for (int i = array.length - 1; i > 0; i--) {
             // 将最大值与最后一个位置的数交换
             exchangeValue(0, i);
             // 重新构建大堆二叉树，从0开始往下检测是否需要重新构建大堆
             maxHeap(i, 0);
-            System.out.println("第" + (array.length - i) + "次排序:" + Arrays.toString(array));
         }
-        ;
+        System.out.println(Arrays.toString(array));
     }
 
     /**
