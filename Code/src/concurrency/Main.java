@@ -7,11 +7,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-    /**
-     * main
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         // ExecutorService executor = Executors.newCachedThreadPool();
         ThreadPoolExecutor executor = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
