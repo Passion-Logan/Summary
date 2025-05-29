@@ -9,8 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         // ExecutorService executor = Executors.newCachedThreadPool();
-        ThreadPoolExecutor executor =
-                new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
 
         CountDownLatch latch = new CountDownLatch(3);
 
